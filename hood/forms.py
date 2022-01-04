@@ -25,3 +25,24 @@ class ProfileUpdateForm(forms.ModelForm):
         model = Profile
         fields =['profile_pic', 'bio']
 
+
+class NewHoodForm(forms.ModelForm):
+    class Meta:
+        model = Neighbourhood
+        exclude = ('admin',)
+
+class EditHoodForm(forms.ModelForm):
+    class Meta:
+        model = Neighbourhood
+        exclude = ('admin',)
+
+class NewBizForm(forms.ModelForm):
+    class Meta:
+        model = Business
+        exclude = ('user',)
+
+
+class NewPostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        exclude = ('user',)
