@@ -74,3 +74,26 @@ class Business(models.Model):
     def hood_biz(cls, id):
         hoodbiznas = Business.objects.filter(neighbourhood = id)
         return hoodbiznas
+
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    text = models.TextField()
+    user = models.ForeignKey(User,on_delete=models.CASCADE,default = '')
+    date = models.DateField(auto_now_add=True)
+    neighbourhood = models.ForeignKey("Neighbourhood",on_delete=models.CASCADE, default='', null=True, blank=True)
+    
+
+    @classmethod
+    def hood_post(cls,id):
+        hoodpost = Post.objects.filter(neighbourhood = id)
+        return hoodpost
+    
+    def __str__(self):
+        return f'{self.title} Post'
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
