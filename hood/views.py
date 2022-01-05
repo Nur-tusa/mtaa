@@ -81,7 +81,7 @@ def update_profile(request):
 @login_required(login_url='/accounts/login/')
 def hood(request):
     hoods = Neighbourhood.objects.all()
-    return render(request, 'jirani.html', {"hoods": hoods})
+    return render(request, 'neighbourhood.html', {"hoods": hoods})
 
 
 @login_required(login_url='/accounts/login/')
