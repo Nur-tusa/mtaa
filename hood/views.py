@@ -81,7 +81,7 @@ def update_profile(request):
 @login_required(login_url='/accounts/login/')
 def hood(request):
     hoods = Neighbourhood.objects.all()
-    return render(request, 'neighbourhoods.html', {"hoods": hoods})
+    return render(request, 'jirani.html', {"hoods": hoods})
 
 
 @login_required(login_url='/accounts/login/')
@@ -115,7 +115,7 @@ def edit_hood(request):
 
     else:
         form = EditHoodForm()
-    return render(request, 'edit_hood.html', {'form': form})
+    return render(request, 'edithood.html', {'form': form})
 
 
 def joinhood(request, id):
@@ -159,13 +159,13 @@ def newbiz(request):
 
     else:
         form = NewBizForm()
-    return render(request, 'newbiz.html', {"form": form})
+    return render(request, 'biz.html', {"form": form})
 
 
 @login_required(login_url='/accounts/login/')
 def posthood(request, id):
     post = Post.hood_post(id=id)
-    return render(request, 'hoodpost.html', {'post': post})
+    return render(request, 'hpost.html', {'post': post})
 
 
 @login_required(login_url='/accounts/login/')
