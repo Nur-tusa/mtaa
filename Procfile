@@ -1,1 +1,1 @@
-web: gunicorn mtaa.wsgi --log-file -
+web: gunicorn mtaa.wsgi
