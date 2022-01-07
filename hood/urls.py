@@ -1,3 +1,4 @@
+
 from django.urls import path
 from . import views
 from hood import views as user_views
@@ -14,9 +15,9 @@ urlpatterns = [
     path('edithood/', views.edit_hood, name='edithood'),
     path('businesses/<id>', views.businesses, name='hoodbusiness'),
     path('singlehood/<id>', views.singlehood, name='singlehood'),
-    path('new_business/', views.newbiz, name='biz'),
+    path('new_business/', views.newbiz, name='newbiz'),
     path('post', views.post, name='post'),
-    path('hoodpost/<id>', views.posthood, name='hpost'),
+    path('hoodpost/<id>', views.posthood, name='hoodpost'),
     path('joinhood/<id>', views.joinhood, name='joinhood'),
     path('leavehood/<id>', views.leavehood, name='leavehood'),
 ]

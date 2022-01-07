@@ -31,6 +31,7 @@ def create_user_profile(sender, instance, created, **kwargs):
         Profile.objects.create(user=instance)
     
 
+
 class Neighbourhood(models.Model):
     name = models.CharField(max_length=50)
     location= models.CharField(max_length=60)
@@ -50,6 +51,8 @@ class Neighbourhood(models.Model):
 
     def delete_neighborhood(self):
         self.delete()
+
+
 
 class Business(models.Model):
     name = models.CharField(max_length=50)
