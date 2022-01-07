@@ -10,6 +10,8 @@ from .models import Profile, Neighbourhood, Business, Post
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
+def logout_view(request):
+    logout(request)
 
 
 def register(request):
@@ -159,13 +161,13 @@ def newbiz(request):
 
     else:
         form = NewBizForm()
-    return render(request, 'biz.html', {"form": form})
+    return render(request, 'newbiz.html', {"form": form})
 
 
 @login_required(login_url='/accounts/login/')
 def posthood(request, id):
     post = Post.hood_post(id=id)
-    return render(request, 'hpost.html', {'post': post})
+    return render(request, 'hoodpost.html', {'post': post})
 
 
 @login_required(login_url='/accounts/login/')
