@@ -6,7 +6,7 @@
 ## live link to website
 https://mtaa-001.herokuapp.com/
 ## Description
-
+This is a website where neighburs can get in touch with each other and they can communicate by joining any their nearest hood
 
 
 ## Set Up Instructions
